@@ -1,0 +1,18 @@
+version: "3.3"
+services:
+  mongodb:
+  image: mongo
+  container_name: mongodb
+  environment:
+    MONGODB_URI: mongodb+srv://teemo:teemo123@cluster0.o7o5b.mongodb.net/project-2?retryWrites=true&w=majority
+    MONGO_INITDB_ROOT_USERNAME: teemo
+    MONGO_INITDB_ROOT_PASSWORD: teemo123
+    MONGO_INITDB_DATABASE: project-2
+  volumes:
+  - data:/data/db
+  ports:
+  - 27017:27017
+  restart: unless-stopped
+
+volumes:
+  prj-mongodb-data:

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Students grades App</title>
+    <style>
+        body {
+          background-color: rgb(139, 218, 201);
+        }
+        </style>
+  </head>
+
+  <body>
+    <h1 data-position="header">Students grades App</h1>
+
+    <section data-position="add-grade">
+      <h2>Add grade</h2>
+
+      <form action="/grades" method="POST">
+        <input type="text" placeholder="name" name="name" />
+        <input type="number" placeholder="grade" name="grade" />
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+
+    <section data-position="update-grade">
+      <div>
+        <h2>Top student! </h2>
+        <p>
+          Replace top student's grade with class average! 
+        </p>
+        <button id="update-button">Display class average grade</button>
+      </div>
+    </section>
+
+    <section data-position="delete-grade">
+      <div>
+        <h2>Remove class avarage!</h2>
+        <p>
+          Delete class average grade.
+        </p>
+        <button id="delete-button">Delete class average grade</button>
+      </div>
+      <div id="message"></div>
+    </section>
+
+    <section data-position="grades">
+      <h2>Grades</h2>
+
+      <ul class="grades">
+        <% for(var i = 0; i < grades.length; i++) {%>
+        <li class="grade">
+          <span><%= grades[i].name %></span>:
+          <span><%= grades[i].grade %></span>
+        </li>
+        <% } %>
+      </ul>
+    </section>
+
+    <script src="/main.js"></script>
+  </body>
+</html>
